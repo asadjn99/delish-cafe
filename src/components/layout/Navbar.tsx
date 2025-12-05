@@ -18,6 +18,7 @@ const Navbar = () => {
     { href: "/shop", label: "SHOP", dropdown: true },
     { href: "/team", label: "TEAM", dropdown: false },
     { href: "/about", label: "ABOUT", dropdown: false },
+    { href: "/gallery", label: "GALLERY", dropdown: false },
     { href: "/contact", label: "CONTACT", dropdown: false },
   ];
 
@@ -55,16 +56,28 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Desktop CTA */}
-        <div className="hidden lg:block z-20">
-          <button className="flex items-center gap-4 border border-[#d34b35] text-white px-6 xl:px-8 py-3 text-xs xl:text-xs font-bold tracking-widest hover:bg-[#d34b35] transition-all group">
-            BOOK A TABLE
-            <span className="flex items-center text-[#d34b35] group-hover:text-white transition-colors">
-              <span className="w-6 xl:w-8 h-1px bg-current mr-2"></span>
-              <ArrowRight size={16} />
-            </span>
-          </button>
-        </div>
+                {/* ... inside your Navbar component ... */}
+
+          {/* Desktop CTA */}
+          <div className="hidden lg:block z-20">
+            {/* WRAP THE BUTTON IN THIS LINK */}
+            <Link href="/book-a-table">
+              <button className="flex items-center gap-4 border border-[#d34b35] text-white px-6 xl:px-8 py-3 text-xs xl:text-xs font-bold tracking-widest hover:bg-[#d34b35] transition-all group">
+                BOOK A TABLE
+                <span className="flex items-center text-[#d34b35] group-hover:text-white transition-colors">
+                  <span className="w-6 xl:w-8 h-1px bg-current mr-2"></span>
+                  <ArrowRight size={16} />
+                </span>
+              </button>
+            </Link>
+          </div>
+
+
+
+
+
+
+
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden z-50">
@@ -100,14 +113,19 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile CTA */}
-        <button className="flex items-center gap-4 border border-[#d34b35] text-white px-8 py-4 text-sm font-bold tracking-widest hover:bg-[#d34b35] transition-all group mt-4">
-          BOOK A TABLE
-          <span className="flex items-center text-[#d34b35] group-hover:text-white transition-colors">
-            <span className="w-8 h-1px bg-current mr-2"></span>
-            <ArrowRight size={16} />
-          </span>
-        </button>
+        {/* ... and for the Mobile CTA ... */}
+
+          {/* Mobile CTA */}
+          <Link href="/book-a-table" className="w-full flex justify-center">
+              <button className="flex items-center gap-4 border border-[#d34b35] text-white px-8 py-4 text-sm font-bold tracking-widest hover:bg-[#d34b35] transition-all group mt-4">
+                BOOK A TABLE
+                <span className="flex items-center text-[#d34b35] group-hover:text-white transition-colors">
+                  <span className="w-8 h-1px bg-current mr-2"></span>
+                  <ArrowRight size={16} />
+                </span>
+              </button>
+          </Link>
+
       </div>
     </nav>
   );
