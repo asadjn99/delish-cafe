@@ -1,6 +1,6 @@
-import './globals.css'; // Uncomment in your real project
+import './globals.css'; 
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google'; // Uncomment in your real project
+// import { Inter } from 'next/font/google'; 
 import TopBar from '../components/layout/TopBar';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer'
@@ -24,7 +24,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           <TopBar />
           <Navbar />
-          <main className="flex-grow">
+          <main className="grow"> {/*flex-grow*/}
             {children}
           </main>
           <Footer />

@@ -14,7 +14,7 @@ const CtaSection = () => {
         </span>
 
         {/* Headline with Decorative Curve */}
-        <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight leading-none mb-12">
+        <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight leading-none mb-12">
           Looking for popular <br />
           <span className="relative inline-block mt-2">
             Fast Food

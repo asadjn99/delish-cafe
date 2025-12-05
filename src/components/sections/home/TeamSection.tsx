@@ -1,10 +1,17 @@
 import React from 'react';
 import Image from 'next/image';
 
-const ChefCard = ({ image, name, role }) => (
+// ---------------- ChefCard ----------------
+interface ChefCardProps {
+  image: string;
+  name: string;
+  role: string;
+}
+
+const ChefCard: React.FC<ChefCardProps> = ({ image, name, role }) => (
   <div className="flex flex-col group cursor-pointer">
     {/* Image */}
-    <div className="w-full aspect-[4/5] relative overflow-hidden rounded-md">
+    <div className="w-full aspect-4/5 relative overflow-hidden rounded-md">
       <Image
         src={image}
         alt={name}
@@ -21,7 +28,8 @@ const ChefCard = ({ image, name, role }) => (
   </div>
 );
 
-const TeamSection = () => {
+// ---------------- TeamSection ----------------
+const TeamSection: React.FC = () => {
   return (
     <section className="relative pt-24 pb-0 bg-white">
       
@@ -48,7 +56,7 @@ const TeamSection = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-24">
           <ChefCard image="/images/waiter1.jpg" name="Kuman Tunman" role="Head Chef" />
           <ChefCard image="/images/waiter2.webp" name="Anna Smith" role="Sous Chef" />
           <ChefCard image="/images/waiter3.jpg" name="John Doe" role="Pastry Chef" />

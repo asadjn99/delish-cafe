@@ -1,7 +1,8 @@
 import React from 'react';
-import { Phone, ArrowRight, Facebook, Twitter, Linkedin, Instagram, Rss, MapPin, Mail, Clock } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, ArrowRight, Facebook, Twitter, Linkedin, Instagram, Rss, MapPin, Mail } from 'lucide-react';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="w-full text-white ">
       {/* --- Top CTA Section (Grid Pattern Background) --- */}
@@ -12,7 +13,7 @@ const Footer = () => {
             backgroundSize: '20px 20px' 
         }}></div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 relative flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <div className="max-w-7xl mx-auto px-8 lg:px-12 py-8 relative flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           
           {/* Left Side: Reservation Prompt */}
           <div className="flex items-center gap-4">
@@ -29,8 +30,7 @@ const Footer = () => {
           {/* Right Side: Phone Number */}
           <div className="flex items-center gap-3">
              <div className="w-10 h-10 rounded-full  flex items-center justify-center text-white shrink-0">
-                {/* <Phone size={18} fill="currentColor" /> */}
-                <img src="./icons/haveaq.png" alt="" />
+                <Image src="/icons/haveaq.png" alt="Have Question" width={40} height={40} />
              </div>
              <div>
                 <p className="text-[10px] text-gray-400 uppercase tracking">Have Question?</p>
@@ -44,25 +44,26 @@ const Footer = () => {
       <div className="bg-[#111] relative pt-16 pb-12 px-6 lg:px-12 overflow-hidden">
         
         {/* Left Overlay Image */}
-            <div className="absolute left-0 bottom-0 w-1/4 h-full  pointer-events-none opacity-10 overflow-hidden">
-            <img 
-                src="/images/footer-left.png" 
-                alt="Decorativeeeeeeeeeeeeeeeeeeeeeeeeeeee"
-                className="w-full h-full object-cover"
-            />
-            </div>
+        <div className="absolute left-0 bottom-0 w-1/4 h-full pointer-events-none opacity-10 overflow-hidden">
+          <Image
+            src="/images/footer-left.png"
+            alt="Decorative Left"
+            fill
+            className="object-cover"
+          />
+        </div>
 
-            {/* Right Overlay Image */}
-            <div className="absolute right-0 bottom-0 w-55 opacity-80 pointer-events-none overflow-hidden">
-            <img 
-                src="/images/footer-right.png" 
-                alt="Decorative"
-                className="w-full h-full object-cover"
-            />
-            </div>
+        {/* Right Overlay Image */}
+        <div className="absolute right-0 bottom-0 w-[220px] opacity-80 pointer-events-none overflow-hidden">
+          <Image
+            src="/images/footer-right.png"
+            alt="Decorative Right"
+            fill
+            className="object-cover"
+          />
+        </div>
 
-
-        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="max-w-6xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           
           {/* Column 1: Get In Touch */}
           <div>
@@ -128,26 +129,26 @@ const Footer = () => {
           </div>
 
           {/* Column 4: Instagram */}
-                <div>
-                <h4 className="text-lg font-bold uppercase tracking-widest mb-6 border-b border-gray-800 pb-2 inline-block">
-                    Instagram
-                </h4>
+          <div>
+            <h4 className="text-lg font-bold uppercase tracking-widest mb-6 border-b border-gray-800 pb-2 inline-block">
+                Instagram
+            </h4>
 
-                <div className="grid grid-cols-3 gap-2">
-                    {[1, 2, 3, 4, 5, 6].map((i) => (
-                    <div
-                        key={i}
-                        className="aspect-square bg-gray-800 cursor-pointer relative overflow-hidden group"
-                    >
-                        <img
-                        src={`/images/insta${i}.jpeg`}   // <--- YOUR SIX IMAGES (insta1.jpeg, insta2.jpeg…)
-                        alt={`Instagram${i}`}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
-                    </div>
-                    ))}
+            <div className="grid grid-cols-3 gap-2">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                <div
+                    key={i}
+                    className="aspect-square bg-gray-800 cursor-pointer relative overflow-hidden group"
+                >
+                    <Image
+                      src={`/images/insta${i}.jpeg`}
+                      alt={`Instagram${i}`}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
                 </div>
-
+                ))}
+            </div>
           </div>
 
         </div>
@@ -155,7 +156,7 @@ const Footer = () => {
 
       {/* --- Copyright Bar --- */}
       <div className="bg-[#0a0a0a] py-6 px-6 lg:px-12 border-t border-white/5">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-100 font-light tracking-wide">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-100 font-light tracking-wide">
            <p>© Copyright Delish. All Rights Reserved.</p>
            <div className="flex gap-6">
               <a href="#" className="hover:text-white transition-colors">Terms Of Use</a>

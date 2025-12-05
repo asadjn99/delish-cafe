@@ -1,9 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowLeft, ArrowRight, Link as LinkIcon } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react"; /*{, Link as LinkIcon}*/
+import Image from "next/image";
 
-const StatItem = ({ number, label1, label2 }) => (
+// ---------------- StatItem ----------------
+interface StatItemProps {
+  number: string | number;
+  label1: string;
+  label2: string;
+}
+
+const StatItem: React.FC<StatItemProps> = ({ number, label1, label2 }) => (
   <div className="text-center group cursor-default">
     <div className="text-5xl md:text-6xl font-black text-white mb-2 group-hover:text-[#cf432d] transition-colors duration-300">
       {number}
@@ -15,33 +23,34 @@ const StatItem = ({ number, label1, label2 }) => (
   </div>
 );
 
-const GalleryCard = ({ src, active }) => (
+// ---------------- GalleryCard ----------------
+interface GalleryCardProps {
+  src: string;
+  active: boolean;
+}
+
+const GalleryCard: React.FC<GalleryCardProps> = ({ src, active }) => (
   <div
-    className={`relative w-[280px] h-[280px] md:w-[330px] md:h-[330px] flex-shrink-0 overflow-hidden rounded-md transition-all duration-300 
-      ${active ? "scale-100 opacity-100" : "scale-90 opacity-50"}`}
+    className={`relative flex shrink-0 overflow-hidden rounded-md transition-all duration-300
+    ${active ? "scale-100 opacity-100" : "scale-95 opacity-50"}
+    w-[140px] h-[140px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px]`}
   >
-    {/* Background Image */}
-    <img
+    <Image
       src={src}
       alt="Food"
-      className="absolute inset-0 w-full h-full object-cover"
+      fill
+      sizes="(max-width: 640px) 140px,
+             (max-width: 768px) 200px,
+             (max-width: 1024px) 300px,
+             350px"
+      className="object-cover"
     />
-
-    {/* Active Orange Overlay */}
-    {/* If you want the overlay back, just uncomment */}
-    {/* 
-    {active && (
-      <div className="absolute inset-0 bg-[#cf432d]/90 flex items-center justify-center">
-        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#cf432d] hover:scale-110 transition-transform cursor-pointer">
-          <LinkIcon size={20} />
-        </div>
-      </div>
-    )}
-    */}
   </div>
 );
 
-const StatsGallerySection = () => {
+
+// ---------------- StatsGallerySection ----------------
+const StatsGallerySection: React.FC = () => {
   const images = [
     "/menu/food1.jpg",
     "/menu/food2.jpeg",
@@ -50,7 +59,7 @@ const StatsGallerySection = () => {
     "/menu/food5.webp",
   ];
 
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState<number>(1);
 
   const prev = () =>
     setIndex((i) => (i === 0 ? images.length - 1 : i - 1));
@@ -72,7 +81,7 @@ const StatsGallerySection = () => {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 relative z-10">
 
-        {/* ⭐ TOP STATS ROW (Added Back) ⭐ */}
+        {/* ⭐ TOP STATS ROW ⭐ */}
         <div className="flex flex-wrap justify-between gap-12 border-b border-white/10 pb-20 mb-20">
           <StatItem number="15" label1="NEW" label2="COOL PROJECTS" />
           <StatItem number="15" label1="TOTAL" label2="AWARDS WIN" />
@@ -110,12 +119,13 @@ const StatsGallerySection = () => {
         </div>
       </div>
 
-      {/* CENTERED CAROUSEL */}
-      <div className="flex justify-center gap-6 pb-20 transition-all">
+      {/* RESPONSIVE WRAPPING GRID/FLEX */}
+      <div className="flex flex-wrap justify-center gap-6 pb-20 w-full mx-auto">
         {images.map((src, i) => (
           <GalleryCard key={i} src={src} active={i === index} />
         ))}
       </div>
+
     </section>
   );
 };

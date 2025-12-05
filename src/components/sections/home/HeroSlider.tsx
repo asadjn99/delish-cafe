@@ -49,20 +49,20 @@ const HeroSlider = () => {
 
       {/* Main Content - Centered Box */}
       <div className="relative z-10 text-center text-white flex flex-col items-center w-[90%] md:w-[680px] h-[245px] justify-center">
-        <h3 className="text-xl md:text-2xl font-bold tracking-[0.2em] mb-2 uppercase">
+        <h3 className="text-xl md:text-3xl font-bold tracking-[0.2em] mb-2 uppercase">
           The Great
         </h3>
 
-        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black mb-3 uppercase tracking-tight leading-none">
+        <h1 className="text-2xl md:text-4xl lg:text-6xl font-black mb-3 uppercase tracking-tight leading-none">
           Flavored Food
         </h1>
 
         <div className="flex items-center gap-4 md:gap-6 w-full justify-center mb-5">
-          <div className="h-[1px] w-8 md:w-24 bg-white/40"></div>
-          <h2 className="text-sm md:text-2xl font-bold tracking-widest uppercase">
+          <div className="h-1px w-8 md:w-24 bg-white/40"></div>
+          <h2 className="text-xl md:text-3xl font-bold tracking-widest uppercase">
             Part of Us
           </h2>
-          <div className="h-[1px] w-8 md:w-24 bg-white/40"></div>
+          <div className="h-1px w-8 md:w-24 bg-white/40"></div>
         </div>
 
         <div className="flex gap-6 md:gap-12 mt-2">
