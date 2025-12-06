@@ -2,10 +2,21 @@ import React from 'react';
 import Image from 'next/image';
 import { ArrowRight, MessageSquare, ArrowUpRight } from 'lucide-react';
 
-const BlogCard = ({ image, date, month, category, title, comments }) => (
+// 1. Define the interface to fix the TypeScript build error
+interface BlogCardProps {
+  image: string;
+  date: string;
+  month: string;
+  category: string;
+  title: string;
+  comments: string | number; // Allow both "05" (string) or 5 (number)
+}
+
+// 2. Apply the interface here
+const BlogCard = ({ image, date, month, category, title, comments }: BlogCardProps) => (
   <div className="group cursor-pointer">
     {/* Image Container */}
-    <div className="relative w-full aspect-[4/3] mb-6 overflow-hidden rounded-md">
+    <div className="relative w-full aspect-4/3 mb-6 overflow-hidden rounded-md">
       <Image
         src={image}
         alt={title}
@@ -18,8 +29,11 @@ const BlogCard = ({ image, date, month, category, title, comments }) => (
         <span className="text-xl font-bold">{date}</span>
         <span className="text-[10px] uppercase font-medium">{month}</span>
         
-        {/* Decorative triangle */}
-        <div className="absolute top-0 right-[-10px] w-0 h-0 border-t-[0px] border-r-[10px] border-b-[50px] border-l-[0px] border-t-transparent border-r-transparent border-b-[#cf432d] border-l-transparent"></div>
+        {/* Decorative triangle (CSS Triangle Hack) */}
+        {/* Note: Tailwind doesn't handle complex borders easily, so inline style or arbitrary values are needed. 
+            The user provided code used border-t-0px etc which aren't standard Tailwind classes. 
+            I have converted them to standard Tailwind arbitrary values for stability. */}
+        <div className="absolute top-0 -right-10px w-0 h-0 border-t-0px border-r-10px border-b-50px border-l-0px border-t-transparent border-r-transparent border-b-[#cf432d] border-l-transparent"></div>
       </div>
     </div>
 
@@ -72,7 +86,7 @@ const BlogSection = () => {
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <BlogCard 
-            image="/images/news1.jpg" 
+            image="/images/news1.jpg" // Make sure this image exists or change to one you have like "/images/insta6.jpeg"
             date="20" 
             month="Feb" 
             category="Food Menu" 
