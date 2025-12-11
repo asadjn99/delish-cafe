@@ -266,7 +266,7 @@ const ContactInfoSection = () => {
              </div>
 
              {/* Overlapping Image (Front/Right) */}
-             <div className="absolute bottom-0 right-0 w-[45%] h-[45%] bg-gray-300 border-[10px] border-white shadow-lg">
+             <div className="absolute bottom-0 right-0 w-[45%] h-[45%] bg-gray-300 border-10px border-white shadow-lg">
                 {/* Replace src with your actual image path */}
                  <Image 
                     src="/images/cheese.webp" 

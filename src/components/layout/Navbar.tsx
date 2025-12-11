@@ -13,9 +13,10 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/", label: "HOME", dropdown: true },
-    { href: "/pages", label: "PAGES", dropdown: true },
+    // { href: "/pages", label: "PAGES", dropdown: true },
     { href: "/menu", label: "MENU", dropdown: true },
     { href: "/shop", label: "SHOP", dropdown: true },
+    { href: "/blog", label: "BLOG", dropdown: true },
     { href: "/team", label: "TEAM", dropdown: false },
     { href: "/about", label: "ABOUT", dropdown: false },
     { href: "/gallery", label: "GALLERY", dropdown: false },
