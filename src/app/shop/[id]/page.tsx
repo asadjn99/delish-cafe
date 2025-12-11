@@ -177,10 +177,10 @@ const NeedTableCta = () => {
   );
 };
 
+
 // ==========================
 //      MAIN DETAIL SECTION
 // ==========================
-
 export default function ShopDetailsPage() {
   const params = useParams();
   const id = Number(params.id); 
