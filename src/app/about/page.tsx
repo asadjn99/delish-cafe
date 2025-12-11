@@ -48,7 +48,7 @@ const AboutHero = () => {
       {/* --- Content --- */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
         <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-wider mb-3">
-          About Us
+          About
         </h1>
 
         <p className="text-[10px] md:text-xs font-bold text-gray-300 uppercase tracking-widest">
@@ -56,7 +56,7 @@ const AboutHero = () => {
             Home
           </span>
           <span className="mx-2">/</span>
-          <span>About Us</span>
+          <span>About</span>
         </p>
       </div>
 

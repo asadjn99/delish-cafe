@@ -57,7 +57,7 @@ const AboutHero = () => {
     {/* Text Content */}
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20">
       <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-wider mb-3">
-        Contact Us
+        Contact us
       </h1>
 
       <p className="text-[10px] md:text-xs font-bold text-gray-300 uppercase tracking-widest">
@@ -78,7 +78,7 @@ const AboutHero = () => {
       }}
     >
       <span className="text-6xl md:text-[90px] lg:text-[120px] font-black uppercase whitespace-nowrap">
-        Contact Us
+        get in touch
       </span>
     </div>
 

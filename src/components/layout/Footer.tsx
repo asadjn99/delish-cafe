@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             backgroundSize: '20px 20px' 
         }}></div>
 
-        <div className="max-w-7xl mx-auto px-8 lg:px-12 py-8 relative flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <div className="max-w-6xl mx-auto px-8 lg:px-0 py-8 relative flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           
           {/* Left Side: Reservation Prompt */}
           <div className="flex items-center gap-4">
@@ -28,15 +28,41 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Right Side: Phone Number */}
-          <div className="flex items-center gap-3">
-             <div className="w-10 h-10 rounded-full  flex items-center justify-center text-white shrink-0">
+            <div className="flex  gap-6 ml-5">
+              
+              {/* --- Added CENTER LINKS: About & Contact --- */}
+              <div className="flex flex-row gap-3 items-center text-center">
+                <a
+                  href="/about"
+                  className="text-sm text-white hover:text-[#cf432d] transition-colors"
+                >
+                  About Us
+                </a>
+                <a
+                  href="/contact"
+                  className="text-sm text-white hover:text-[#cf432d] transition-colors"
+                >
+                  Contact
+                </a>
+              </div>
+
+
+              {/* Icon */}
+              <div className="w-10 h-10 rounded-full flex items-center justify-center text-white shrink-0">
                 <Image src="/icons/haveaq.png" alt="Have Question" width={40} height={40} />
-             </div>
-             <div>
+              </div>
+
+              
+              {/* --- END ADDITION --- */}
+
+              {/* Right Side: Phone Details */}
+              <div>
                 <p className="text-[10px] text-gray-400 uppercase tracking">Have Question?</p>
                 <p className="text-sm font-bold">FREE +92 (8800)-9850</p>
-             </div>
-          </div>
+              </div>
+
+            </div>
+
         </div>
       </div>
 
@@ -85,7 +111,7 @@ const Footer: React.FC = () => {
 
             {/* Social Icons */}
             <div className="flex gap-3 mt-8">
-              <a href="#" className="w-8 h-8 rounded-full bg-[#cf432d] flex items-center justify-center text-white hover:bg-white hover:text-[#cf432d] transition-colors"><Facebook size={14} /></a>
+              <a href="#" className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black hover:bg-[#cf432d] hover:text-white transition-colors"><Facebook size={14} /></a>
               <a href="#" className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black hover:bg-[#cf432d] hover:text-white transition-colors"><Twitter size={14} /></a>
               <a href="#" className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black hover:bg-[#cf432d] hover:text-white transition-colors"><Linkedin size={14} /></a>
               <a href="#" className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black hover:bg-[#cf432d] hover:text-white transition-colors"><Instagram size={14} /></a>
